@@ -9,19 +9,19 @@ import {
   PerspectiveCamera,
 } from "@react-three/drei";
 import useIsMobile from "./hooks/useIsMobile";
-import { useEffect } from "react";
 
-export default function Experience() {
-  const computer = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
+export default function ExperiencePhone() {
+  const phone = useGLTF(
+    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf"
   );
+
+  const isMobile = useIsMobile();
 
   return (
     <>
       <PerspectiveCamera
         makeDefault
-        position={[-1.5, 1, 5]}
-        rotation={[-0.2, -0.4, 0]}
+        position={[0, 0.3, 5]}
         fov={45}
         near={0.1}
         far={2000}
@@ -47,30 +47,19 @@ export default function Experience() {
           />
 
           <primitive
-            object={computer.scene}
-            position-y={-1.2}
+            object={phone.scene}
+            position={[0 - 0.1, -1.2, 0]}
             // rotation-x={ 0.13 }
           >
             <Html
               transform
-              wrapperClass="htmlScreen"
+              wrapperClass="htmlScreen htmlScreen-phone"
               distanceFactor={1.17}
-              position={[0, 1.56, -1.4]}
-              rotation-x={-0.256}
+              position={[0.15, 1.35, 0.1]}
             >
               <iframe src="https://portfolio2d-three.vercel.app/" />
             </Html>
           </primitive>
-
-          <Text
-            font="./bangers-v20-latin-regular.woff"
-            fontSize={1}
-            position={[2, 0.75, 0.75]}
-            rotation-y={-1.25}
-            maxWidth={2}
-          >
-            GUSTAVO LEGLISE
-          </Text>
         </Float>
       </PresentationControls>
 

@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience.jsx";
+import ExperiencePhone from "./Experience-phone.jsx";
+import useIsMobile from "./hooks/useIsMobile.jsx";
 
 function App() {
-  const [started, setStarted] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setStarted(true);
-    }, 4000);
-  }, []);
-
+  const isMobile = useIsMobile();
   return (
     <Canvas
       className="r3f"
@@ -20,7 +16,7 @@ function App() {
         position: [-3, 1.5, 4],
       }}
     >
-      <Experience />
+      {!isMobile ? <Experience /> : <ExperiencePhone />}
     </Canvas>
   );
 }

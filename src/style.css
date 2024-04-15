@@ -1,49 +1,35 @@
 html,
 body,
-#root
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: ivory;
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: ivory;
 }
 
-.r3f
-{
-    touch-action: none;
+.r3f {
+  touch-action: none;
 }
 
 .htmlScreen iframe {
-    position: relative;
-    width: 1024px;
-    height: 670px;
-    border: none;
-    border-radius: 20px;
-    background: #000;
-    z-index: 0;
-  }
-  .loading_screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f5a97d;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 1.5s;
-    z-index: 10;
-  }
-  
-  .loadingScreen--started {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  .svg--simbol {
-    stroke-width: 10;
-  }
+  position: relative;
+  width: 1024px;
+  height: 670px;
+  border: none;
+  border-radius: 20px;
+  background: #000;
+  z-index: 0;
+}
+
+.htmlScreen-phone iframe {
+  width: 512px;
+  height: 980px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.htmlScreen-phone iframe::-webkit-scrollbar {
+  display: none;
+}
