@@ -7,6 +7,12 @@ body,
   width: 100%;
   height: 100%;
   background: ivory;
+  font-family: sans-serif;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: white;
 }
 
 .r3f {
@@ -32,4 +38,82 @@ body,
 
 .htmlScreen-phone iframe::-webkit-scrollbar {
   display: none;
+}
+
+.footer {
+  position: absolute;
+  top: 95%;
+  left: 2%;
+
+  font-size: 1em;
+  color: #fff;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    background: #ff9043;
+  }
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .background.background-0 {
+    background: linear-gradient(
+      to left top,
+      #fccf92,
+      rgba(252, 207, 146, 0) 70%
+    );
+  }
+
+  .background.background-1 {
+    background: linear-gradient(
+      to right top,
+      #fabda0,
+      rgba(250, 189, 160, 0) 70%
+    );
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+  }
+  .container .message {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 1em;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    padding: 1em;
+    border: solid 2px #fff;
+    border-radius: 12px;
+  }
+  .button:hover {
+    background: #fff;
+    color: #ff9043;
+    transition: background 0.3s, color 0.3s;
+  }
 }

@@ -18,14 +18,6 @@ export default function Experience() {
 
   return (
     <>
-      <PerspectiveCamera
-        makeDefault
-        position={[-1.5, 1, 5]}
-        rotation={[-0.2, -0.4, 0]}
-        fov={45}
-        near={0.1}
-        far={2000}
-      />
       <color args={["#241a1a"]} attach="background" />
       <Environment preset="city" />
       <PresentationControls

@@ -9,23 +9,15 @@ import {
   PerspectiveCamera,
 } from "@react-three/drei";
 import useIsMobile from "./hooks/useIsMobile";
+import { useEffect } from "react";
 
-export default function ExperiencePhone() {
-  const phone = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf"
+export default function Experience() {
+  const computer = useGLTF(
+    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
   );
-
-  const isMobile = useIsMobile();
 
   return (
     <>
-      <PerspectiveCamera
-        makeDefault
-        position={[0, 0.3, 5]}
-        fov={45}
-        near={0.1}
-        far={2000}
-      />
       <color args={["#241a1a"]} attach="background" />
       <Environment preset="city" />
       <PresentationControls
@@ -47,15 +39,16 @@ export default function ExperiencePhone() {
           />
 
           <primitive
-            object={phone.scene}
-            position={[0 - 0.1, -1.2, 0]}
+            object={computer.scene}
+            position-y={-1.2}
             // rotation-x={ 0.13 }
           >
             <Html
               transform
-              wrapperClass="htmlScreen htmlScreen-phone"
+              wrapperClass="htmlScreen"
               distanceFactor={1.17}
-              position={[0.15, 1.35, 0.1]}
+              position={[0, 1.56, -1.4]}
+              rotation-x={-0.256}
             >
               <iframe src="https://portfolio2d-three.vercel.app/" />
             </Html>
